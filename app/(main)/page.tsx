@@ -1,7 +1,5 @@
-
+import MainHome from "@/components/(main)/home";
 
 export default function Home() {
-  return (
-    <div></div>
-  );
+  return <MainHome />;
 }

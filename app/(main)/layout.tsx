@@ -4,6 +4,7 @@ import "./globals.css";
 import GradientBackground from "@/components/common/background/GradientBackground";
 import ThemeProvider from "@/components/common/theme/ThemeProvider";
 import Header from "@/components/common/header";
+import Footer from "@/components/common/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +31,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground ">
         <ThemeProvider>
           <GradientBackground />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 max-w-5xl mx-auto mt-16 w-full px-3">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

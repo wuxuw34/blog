@@ -44,35 +44,34 @@ export default function Header() {
           Wuxuw
         </Link>
 
-        {/* Nav */}
+        {/* 导航 */}
         <nav className="flex items-center gap-1">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+              className="rounded-md px-3 py-1.5 text-sm text-neutral-600 transition-colors dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 font-bold hover:text-primary"
             >
               {item.label}
             </Link>
           ))}
+          {/* 搜索等等按钮 */}
+          <div className="flex items-center gap-1">
+            <button
+              aria-label="Search"
+              className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+            >
+              <Search size={18} />
+            </button>
+            <button
+              aria-label="Toggle theme"
+              onClick={toggleTheme}
+              className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
         </nav>
-
-        {/* Actions */}
-        <div className="flex items-center gap-1">
-          <button
-            aria-label="Search"
-            className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-          >
-            <Search size={18} />
-          </button>
-          <button
-            aria-label="Toggle theme"
-            onClick={toggleTheme}
-            className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-          >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-        </div>
       </div>
     </header>
   );
