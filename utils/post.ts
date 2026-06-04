@@ -31,7 +31,7 @@ export default function getAllPosts(removeContent = false) {
   return posts
 }
 
-export function getPostById(id: string, removeContent = false) {
+export function getPostById(id: string) {
   const posts = getAllPosts(false)
   return posts.find(post => post.id === id)
 }

@@ -68,6 +68,7 @@ const markdownComponents = {
   img: (props: ComponentPropsWithoutRef<"img">) => (
     <img
       className="rounded-xl my-6 w-full object-cover"
+      alt={props.alt || ""}
       {...props}
     />
   ),

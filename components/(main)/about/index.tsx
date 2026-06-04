@@ -1,5 +1,4 @@
 import Button from "@/components/common/button/Button";
-import GithubCard from "@/components/common/card/github";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import markdownComponents from "../blog/markdown";
@@ -36,7 +35,7 @@ export default function About() {
             Education
           </markdownComponents.h1>
           <div className="grid grid-cols-2">
-            {siteConfig.profile.educations.map((edu, index) => (
+            {siteConfig.profile.educations.map((edu) => (
               <CommonCard
                 key={edu.name}
                 data={{

@@ -3,24 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 import { EChartsOption } from "echarts";
 import apis from "@/apis";
-import { number } from "framer-motion";
 
 interface GithubProps {
   username?: string;
-}
-
-function getVirtualData(year: string) {
-  const date = +echarts.time.parse(year + "-01-01");
-  const end = +echarts.time.parse(+year + 1 + "-01-01");
-  const dayTime = 3600 * 24 * 1000;
-  const data = [];
-  for (let time = date; time < end; time += dayTime) {
-    data.push([
-      echarts.time.format(time, "{yyyy}-{MM}-{dd}", false),
-      Math.floor(Math.random() * 10000),
-    ]);
-  }
-  return data;
 }
 
 const id = "github-" + new Date().getFullYear();
@@ -81,14 +66,14 @@ export default function GithubCard({ username }: GithubProps) {
   useEffect(() => {
     const cache = localStorage.getItem(id);
     if (cache) {
-      const update = ()=>{
+      const update = () => {
         setImg(cache);
-      }
-      update()
+      };
+      update();
       return;
     }
     const chart = echarts.init(canvas.current);
-    apis.github("wuxuw34").then((data) => {
+    apis.github(username || "wuxuw34").then((data) => {
       const contributions = data.contributions.map((contribution) => {
         return [contribution.date, contribution.count];
       });

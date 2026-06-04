@@ -1,4 +1,4 @@
-import Tags from "@/components/(main)/tags";
+
 import TagBlogs from "@/components/(main)/tags/TagBlogs";
 
 export default async function Page({ params }: { params: { tag: string } }) {

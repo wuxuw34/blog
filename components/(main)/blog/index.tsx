@@ -2,35 +2,9 @@ import Button from "@/components/common/button/Button";
 import PostCard from "@/components/common/card/PostCard";
 import ArrowRight from "@/components/common/svg/ArrowRight";
 import getAllPosts from "@/utils/post";
-import { faker } from "@faker-js/faker";
 import { Icon } from "@iconify/react";
 import clsx from "clsx";
 import Link from "next/link";
-
-const generateMockPostsWithFaker = (count: number): Post[] => {
-  const tags = [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind",
-    "Node.js",
-    "GraphQL",
-    "Prisma",
-    "Docker",
-    "Vercel",
-    "AI",
-  ];
-
-  return Array.from({ length: count }, (_, index) => ({
-    id: faker.string.uuid(),
-    title: faker.lorem.sentence({ min: 3, max: 8 }).replace(/\.$/, ""),
-    date: faker.date.past({ years: 1 }).getTime(),
-    description: faker.lorem.sentence({ min: 10, max: 20 }),
-    content: faker.lorem.paragraphs({ min: 2, max: 4 }),
-    tags: faker.helpers.arrayElements(tags, { min: 2, max: 4 }),
-    cover: { href: "/img/blog.jpg", color: "#d3c7b7" },
-  }));
-};
 
 export default function Blog() {
   const page = 1;
@@ -38,8 +12,6 @@ export default function Blog() {
   const total = 23;
   const posts = getAllPosts();
   const tags = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js"];
-
-  console.log(posts);
 
   return (
     <div>
