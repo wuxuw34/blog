@@ -1,5 +1,48 @@
 
 
+
+const skills: {
+  icon: string;
+  name: string;
+  description: string;
+}[] = [
+    {
+      icon: 'skill-icons:html',
+      name: 'HTML',
+      description: 'HyperText Markup Language'
+    },
+    {
+      icon: 'skill-icons:css',
+      name: 'CSS',
+      description: 'Cascading Style Sheets'
+    },
+    {
+      icon: 'skill-icons:typescript',
+      name: 'TypeScript',
+      description: 'Superset of JavaScript'
+    },
+    {
+      icon: 'skill-icons:javascript',
+      name: 'JavaScript',
+      description: 'Programming language'
+    },
+    {
+      icon: 'skill-icons:react-dark',
+      name: 'React',
+      description: 'JavaScript library for building user interfaces'
+    },
+    {
+      icon: 'devicon:vuejs',
+      name: 'Vue',
+      description: 'JavaScript framework for building user interfaces'
+    },
+    {
+      icon: 'skill-icons:nodejs-light',
+      name: 'Node.js',
+      description: 'JavaScript runtime environment'
+    }
+  ]
+
 const siteConfig = {
   profile: {
     socials: [
@@ -39,7 +82,8 @@ const siteConfig = {
         end: 2024,
         image: '/img/xnmzdx.jpg'
       }
-    ]
+    ],
+    skills
   },
   settings: {
     timeFormat: "MMM yy, YYYY"

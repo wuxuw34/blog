@@ -7,6 +7,8 @@ import siteConfig from "@/config/site-config";
 import Changelog from "./Changelog";
 import CommonCard from "@/components/common/card/CommonCard";
 import moment from "moment";
+import Skills from "./Skills";
+import Tools from "./Tools";
 
 export default function About() {
   return (
@@ -31,7 +33,7 @@ export default function About() {
             <markdownComponents.li>宅在家中</markdownComponents.li>
             <markdownComponents.li>游戏</markdownComponents.li>
           </markdownComponents.ul>
-          <markdownComponents.h1 id="education">
+          <markdownComponents.h1 id="Education">
             Education
           </markdownComponents.h1>
           <div className="grid grid-cols-2">
@@ -51,17 +53,19 @@ export default function About() {
               />
             ))}
           </div>
-          <markdownComponents.h1 id="skills">
-            Skills
-          </markdownComponents.h1>
-          
+          <markdownComponents.h1 id="Skills">Skills</markdownComponents.h1>
+          <Skills />
+          <markdownComponents.h1 id="Tools">Tools</markdownComponents.h1>
+          <Tools />
           <markdownComponents.h1 id="About blog">
             About blog
           </markdownComponents.h1>
           <markdownComponents.p>
             这个部分是介绍网站的，包括网站的变更日志，使用的技术栈，以及一些其他信息。
           </markdownComponents.p>
-          <markdownComponents.h2>Changelog</markdownComponents.h2>
+          <markdownComponents.h2 id="Changelog">
+            Changelog
+          </markdownComponents.h2>
           <Changelog />
           <h1
             id="article-end"
@@ -79,14 +83,24 @@ export default function About() {
                   children: [],
                 },
                 {
-                  name: "education",
+                  name: "Education",
                   level: 1,
                   children: [],
                 },
                 {
-                  name: "skills",
+                  name: "Skills",
                   level: 1,
                   children: [],
+                },
+                {
+                  name: "Tools",
+                  level: 1,
+                  children: [],
+                },
+                {
+                  name: "About blog",
+                  level: 1,
+                  children: [{ name: "Changelog", level: 2, children: [] }],
                 },
               ]}
             />

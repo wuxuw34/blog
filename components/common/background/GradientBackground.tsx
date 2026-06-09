@@ -3,7 +3,7 @@ interface GradientBackgroundProps {
 }
 
 export default function GradientBackground({
-  color = "#e2c6bb",
+  color = "#e4dbd8",
 }: GradientBackgroundProps) {
   return (
     <div
