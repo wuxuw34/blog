@@ -1,5 +1,4 @@
 "use client";
-
 import useToc from "@/hooks/useToc";
 import clsx from "clsx";
 import { Icon } from "@iconify/react";
@@ -78,6 +77,7 @@ export default function Toc({ post, headings: _headings }: TocProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [states, setStates] = useState<TocItemState[]>([]);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   useToc([...headings, "article-end"], (range) => {
     const active = range.find((item) => item.offset === 1) || range[0];
     setActiveId(active?.id);
@@ -100,6 +100,12 @@ export default function Toc({ post, headings: _headings }: TocProps) {
       document.body.style.overflow = "";
     };
   }, [isExpanded]);
+
+
+  useEffect(()=>{
+    // eslint-disable-next-line 
+    setIsMounted(true);
+  },[])
 
   function renderTocItem(toc: TocItem) {
     const index = states.findIndex((state) => state?.id === toc.name);
@@ -173,6 +179,9 @@ export default function Toc({ post, headings: _headings }: TocProps) {
     activeId && activeId !== "article-end"
       ? activeId
       : toc[0]?.name || post?.title || "";
+
+  if (!isMounted)
+    return null;
 
   return (
     <>
@@ -250,7 +259,7 @@ export default function Toc({ post, headings: _headings }: TocProps) {
             )}
           </AnimatePresence>
         </div>,
-        document.body,
+        document?.body,
       )}
     </>
   );
