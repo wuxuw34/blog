@@ -45,6 +45,7 @@ const skills: {
 
 const siteConfig = {
   profile: {
+    username: 'Kagerou',
     socials: [
       {
         icon: "mdi:location",

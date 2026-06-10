@@ -4,13 +4,14 @@ import Link from "next/link";
 import { Search, Moon, Sun } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "@/components/common/theme/ThemeProvider";
+import siteConfig from "@/config/site-config";
 
 const navItems = [
   { label: "Blog", href: "/blog" },
   { label: "Projects", href: "/projects" },
   { label: "Links", href: "/links" },
+  { label: "Notes", href: "/notes" },
   { label: "About", href: "/about" },
-  { label: "Note", href: "/note" },
 ];
 
 export default function Header() {
@@ -41,7 +42,7 @@ export default function Header() {
           href="/"
           className="text-lg font-bold tracking-tight text-foreground"
         >
-          Wuxuw
+          {siteConfig.profile.username}
         </Link>
 
         {/* 导航 */}

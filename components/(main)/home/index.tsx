@@ -3,6 +3,8 @@ import Profile from "./Profile";
 import Posts from "./Posts";
 import Projects from "./Projects";
 
+
+
 export default function MainHome() {
   return (
     <div className="flex flex-col items-center w-full">

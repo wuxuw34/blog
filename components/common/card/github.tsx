@@ -93,11 +93,13 @@ export default function GithubCard({ username }: GithubProps) {
       canvas.current = null;
       chart.dispose();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div ref={container}>
       {img ? (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={img}
           alt="github"

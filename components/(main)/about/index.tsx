@@ -9,6 +9,7 @@ import CommonCard from "@/components/common/card/CommonCard";
 import moment from "moment";
 import Skills from "./Skills";
 import Tools from "./Tools";
+import Comment from "@/components/common/comment";
 
 export default function About() {
   return (
@@ -71,6 +72,7 @@ export default function About() {
             id="article-end"
             className="invisible"
           ></h1>
+          <Comment />
         </article>
         <div className="col-span-3">
           <aside className=" animate sticky top-24">

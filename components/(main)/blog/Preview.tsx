@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import markdownComponents from "./markdown";
 import Toc from "./Toc";
+import Comment from "@/components/common/comment";
 
 interface PostPreviewProps {
   id: string;
@@ -96,6 +97,7 @@ export default function PostPreview({ id }: PostPreviewProps) {
             id="article-end"
           ></h6>
         </article>
+        <Comment />
       </div>
       <div className="hidden md:block col-span-3">
         <aside className=" animate sticky top-24">

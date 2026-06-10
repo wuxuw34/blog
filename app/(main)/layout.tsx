@@ -17,8 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wuxuw Blog",
-  description: "Personal blog by Wuxuw",
+  title: "kagerou",
+  description:
+    "kagerou's personal website, share my thoughts and experiences with the world",
+  keywords: ["kagerou", "blog", "Frontend"],
+  icons: {
+    icon: "/img/avatar.webp",
+  },
 };
 
 export default function RootLayout({

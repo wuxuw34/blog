@@ -57,6 +57,7 @@ export default function useToc(
 
   useEffect(()=>{
     handleScroll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(() => {

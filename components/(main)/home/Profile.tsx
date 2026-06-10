@@ -14,7 +14,9 @@ export default function Profile() {
         loading="eager"
         className="rounded-full  outline-primary outline-4 aspect-square outline-offset-2 bg-white hover:rotate-[-5deg] hover:shadow-2xl transition-all duration-300"
       />
-      <h1 className="text-4xl font-medium mt-7">Wuxuw</h1>
+      <h1 className="text-4xl font-medium mt-7">
+        {siteConfig.profile.username}
+      </h1>
       <div className="flex flex-row items-center justify-between mt-4 gap-7">
         {siteConfig.profile.socials.map((info) => {
           return (

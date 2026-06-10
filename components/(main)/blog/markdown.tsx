@@ -53,7 +53,7 @@ const markdownComponents = {
   ),
   p: (props: ComponentPropsWithoutRef<"p">) => (
     <p
-      className="my-4 leading-relaxed text-foreground/85"
+      className="my-4 leading-relaxed text-foreground/85 whitespace-pre-wrap"
       {...props}
     />
   ),
@@ -66,6 +66,7 @@ const markdownComponents = {
     />
   ),
   img: (props: ComponentPropsWithoutRef<"img">) => (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       className="rounded-xl my-6 w-full object-cover"
       alt={props.alt || ""}
@@ -118,7 +119,7 @@ const markdownComponents = {
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote
-      className="my-4 pl-4 border-l-2 border-primary/30 text-muted-foreground italic"
+      className="my-4 pl-4 border-l-2 border-primary/30 text-muted-foreground italic "
       {...props}
     />
   ),
