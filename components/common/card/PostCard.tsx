@@ -31,7 +31,7 @@ export default async function PostCard({ post, type = "mini" }: PostCardProps) {
           />
           <div className="relative w-full flex flex-col justify-between gap-1">
             <span className="text-muted-foreground/80 text-sm">
-              {moment(post.date).format("MMM yy, YYYY")}
+              {moment(post.createAt).format("MMM yy, YYYY")}
             </span>
             <div className="flex flex-row items-center justify-between ">
               <span className="text-lg group-hover:text-(--color)">
@@ -63,11 +63,11 @@ export default async function PostCard({ post, type = "mini" }: PostCardProps) {
   return (
     <Link
       href={`/blog/${post.id}`}
-      className={`group px-2 rounded-lg flex flex-row justify-between items-center border bg-muted/40 text-muted-foreground/80 border-border text-sm py-1 hover:text-primary/60 cursor-pointer hover:bg-muted transition-all duration-150 gap-1 h-12 `}
+      className={`group px-2 rounded-xl flex flex-row justify-between items-center border bg-muted/40 text-muted-foreground/80 border-border text-sm py-1 hover:text-primary/60 cursor-pointer hover:bg-muted transition-all duration-150 gap-1 h-12 `}
     >
       <div className="flex flex-row items-center">
         <div className="min-w-26">
-          {moment(post.date).format("MMM yy, YYYY")}
+          {moment(post.createAt).format("MMM yy, YYYY")}
         </div>
         <span className="text-muted-foreground/70 font-bold group-hover:text-primary/90">
           {post.title}
@@ -79,9 +79,9 @@ export default async function PostCard({ post, type = "mini" }: PostCardProps) {
         height="16"
         viewBox="0 0 24 24"
         fill="none"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className="stroke-muted-foreground group-hover:stroke-primary"
       >
         <line

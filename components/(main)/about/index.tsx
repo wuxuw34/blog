@@ -23,8 +23,8 @@ export default function About() {
         </Button>
       </Link>
       <h1 className="my-6 text-3xl font-medium animate">About</h1>
-      <div className="grid grid-cols-12 mt-6 gap-x-6">
-        <article className="col-span-9">
+      <div className="md:grid grid-cols-12 mt-6 gap-x-6">
+        <article className="col-span-9 ">
           <markdownComponents.p>前端开发工程师</markdownComponents.p>
           <markdownComponents.p>
             闲着没事写了这个博客，分享一下自己的学习和经验，记录一下生活。
@@ -68,13 +68,46 @@ export default function About() {
             Changelog
           </markdownComponents.h2>
           <Changelog />
+          <markdownComponents.h2 id="Technology stack">
+            Technology stack
+          </markdownComponents.h2>
+          <markdownComponents.ul>
+            <markdownComponents.li>
+              <markdownComponents.strong>Domain: </markdownComponents.strong>
+              Aliyun
+            </markdownComponents.li>
+            <markdownComponents.li>
+              <markdownComponents.strong>Hosting: </markdownComponents.strong>
+              Vercel
+            </markdownComponents.li>
+            <markdownComponents.li>
+              <markdownComponents.strong>Framework: </markdownComponents.strong>
+              Next.js
+            </markdownComponents.li>
+            <markdownComponents.li>
+              <markdownComponents.strong>Language: </markdownComponents.strong>
+              Typescript
+            </markdownComponents.li>
+            <markdownComponents.li>
+              <markdownComponents.strong>
+                UI Framework:{" "}
+              </markdownComponents.strong>
+              Tailwind CSS
+            </markdownComponents.li>
+            <markdownComponents.li>
+              <markdownComponents.strong>
+                Comment:{" "}
+              </markdownComponents.strong>
+              Gitalk
+            </markdownComponents.li>
+          </markdownComponents.ul>
           <h1
             id="article-end"
             className="invisible"
           ></h1>
           <Comment />
         </article>
-        <div className="col-span-3">
+        <div className="col-span-3 hidden md:block">
           <aside className=" animate sticky top-24">
             <h2 className="text-xl font-medium">TABLE OF CONTENTS</h2>
             <Toc
@@ -102,7 +135,10 @@ export default function About() {
                 {
                   name: "About blog",
                   level: 1,
-                  children: [{ name: "Changelog", level: 2, children: [] }],
+                  children: [
+                    { name: "Changelog", level: 2, children: [] },
+                    { name: "Technology stack", level: 2, children: [] },
+                  ],
                 },
               ]}
             />

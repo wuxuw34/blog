@@ -12,8 +12,8 @@ interface TagBlogsProps {
 export default function TagBlogs({ tag }: TagBlogsProps) {
   const page = 1;
   const pageSize = 10;
-  const total = 23;
-  const posts = getAllPosts();
+  const posts = getAllPosts().filter(post=>post.tags.includes(tag));
+  const total = posts.length;
 
   return (
     <div>

@@ -7,11 +7,16 @@ import clsx from "clsx";
 import Link from "next/link";
 
 export default function Blog() {
-  const page = 1;
   const pageSize = 10;
-  const total = 23;
-  const posts = getAllPosts();
-  const tags = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js"];
+  const posts = getAllPosts(true);
+  const page = 1;
+  const total = posts.length;
+  const currentShowingPage = total % pageSize;
+  const tags = posts
+    .map((post) => {
+      return post.tags;
+    })
+    .flat();
 
   return (
     <div>
@@ -20,15 +25,17 @@ export default function Blog() {
         <div className="col-span-8 ">
           <div className="flex flex-row items-center justify-between  text-sm animate">
             <span className="text-muted-foreground/80">
-              Page {page} - Showing {pageSize} of {total} posts
+              Page {page} - Showing {currentShowingPage} of {total} posts
             </span>
-            <Button
-              className="outline-0 border-none"
-              transparent
-            >
-              View all posts by years
-              <ArrowRight />
-            </Button>
+            <Link href="/archives">
+              <Button
+                className="outline-0 border-none"
+                transparent
+              >
+                View all posts by years
+                <ArrowRight />
+              </Button>
+            </Link>
           </div>
           <div className="flex flex-col gap-3 mt-6">
             {posts.map((post) => (

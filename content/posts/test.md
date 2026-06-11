@@ -4,9 +4,9 @@ title: 测试
 
 description: 这是描述
 
-tags: [123]
+tags: [测试,博客]
 
-createAt: 10123123
+createAt: 2026-6-10
 
 cover: {
   "href":"/test/1.jpg",

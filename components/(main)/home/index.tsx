@@ -14,6 +14,7 @@ export default function MainHome() {
         <MoreInfoCard
           title="About"
           bntText="More about me"
+          delay={0.5}
         >
           <div className="flex flex-col gap-3">
             <p>一名前端开发工程师</p>
@@ -23,12 +24,14 @@ export default function MainHome() {
         <MoreInfoCard
           title="Post"
           bntText="More posts"
+          delay={1}
         >
           <Posts />
         </MoreInfoCard>
         <MoreInfoCard
           title="Projects"
           bntText="More projects"
+          delay={1.5}
         >
           <Projects />
         </MoreInfoCard>

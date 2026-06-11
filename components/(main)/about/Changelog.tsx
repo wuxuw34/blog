@@ -2,12 +2,8 @@ import TimeLine, { type TimelineItem } from "@/components/common/timeline";
 
 const changelogs: TimelineItem[] = [
   {
-    date: "2025-01",
-    description: "Built with Next.js and Tailwind CSS.",
-  },
-  {
-    date: "2025-01-01",
-    description: "Built with Next.js and Tailwind CSS."
+    date: "2026-06-11",
+    description: "网站第一版上线👏",
   },
 ];
 

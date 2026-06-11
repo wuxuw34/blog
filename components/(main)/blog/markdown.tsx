@@ -143,16 +143,16 @@ const markdownComponents = {
   ),
   hr: () => <hr className="my-10 border-border" />,
   table: (props: ComponentPropsWithoutRef<"table">) => (
-    <div className="my-6 overflow-x-auto rounded-lg border border-border">
+    <div className="my-6 overflow-x-auto rounded-lg border border-border -mx-4 md:mx-0">
       <table
-        className="w-full text-sm"
+        className="w-full min-w-[500px] text-sm"
         {...props}
       />
     </div>
   ),
   thead: (props: ComponentPropsWithoutRef<"thead">) => (
     <thead
-      className="bg-muted"
+      className="bg-muted border-b border-border"
       {...props}
     />
   ),
@@ -164,19 +164,19 @@ const markdownComponents = {
   ),
   tr: (props: ComponentPropsWithoutRef<"tr">) => (
     <tr
-      className="even:bg-muted/50"
+      className="even:bg-muted/50 transition-colors"
       {...props}
     />
   ),
   th: (props: ComponentPropsWithoutRef<"th">) => (
     <th
-      className="px-4 py-3 text-left font-medium"
+      className="px-3 md:px-4 py-3 text-left font-medium whitespace-nowrap"
       {...props}
     />
   ),
   td: (props: ComponentPropsWithoutRef<"td">) => (
     <td
-      className="px-4 py-2.5 text-foreground/85"
+      className="px-3 md:px-4 py-2.5 text-foreground/85"
       {...props}
     />
   ),

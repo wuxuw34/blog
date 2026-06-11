@@ -87,7 +87,7 @@ const siteConfig = {
     skills
   },
   settings: {
-    timeFormat: "MMM yy, YYYY"
+    timeFormat: "MMM DD, YYYY"
   },
   projects: [
     {

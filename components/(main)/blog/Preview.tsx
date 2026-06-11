@@ -9,6 +9,7 @@ import Link from "next/link";
 import markdownComponents from "./markdown";
 import Toc from "./Toc";
 import Comment from "@/components/common/comment";
+import remarkGfm from 'remark-gfm'
 
 interface PostPreviewProps {
   id: string;
@@ -22,7 +23,7 @@ export default function PostPreview({ id }: PostPreviewProps) {
   const infos: { icon: string; text: string; type?: string }[] = [
     {
       icon: "mdi:calendar",
-      text: moment(post.date).format(siteConfig.settings.timeFormat),
+      text: moment(post.createAt).format(siteConfig.settings.timeFormat),
     },
     {
       icon: "ri:time-line",
@@ -62,9 +63,9 @@ export default function PostPreview({ id }: PostPreviewProps) {
           alt={post.title}
           width={100}
           height={60}
-          className="w-full h-86 object-cover rounded-xl shadow-xl mt-6"
+          className="w-full h-86 object-cover rounded-xl shadow-xl mt-6 animate"
         />
-        <ul className="flex flex-row gap-3 mt-3 text-sm text-muted-foreground/80">
+        <ul className="flex flex-row gap-3 mt-3 text-sm text-muted-foreground/80 animate delay-100">
           {infos.map((info, index) => {
             return (
               <li
@@ -86,10 +87,10 @@ export default function PostPreview({ id }: PostPreviewProps) {
             );
           })}
         </ul>
-        <h1 className="mt-6 mb-4 text-3xl font-medium">{post.title}</h1>
-        <p>&quot;{post.description}&quot;</p>
-        <article className="mt-12 ">
-          <ReactMarkdown components={markdownComponents}>
+        <h1 className="mt-6 mb-4 text-3xl font-medium animate delay-150">{post.title}</h1>
+        <p className="animate delay-150">&quot;{post.description}&quot;</p>
+        <article className="mt-12 animate delay-200">
+          <ReactMarkdown components={markdownComponents} remarkPlugins={[remarkGfm]}>
             {post.content}
           </ReactMarkdown>
           <h6
