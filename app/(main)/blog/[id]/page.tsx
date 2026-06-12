@@ -1,4 +1,26 @@
 import PostPreview from "@/components/(main)/blog/Preview";
+import { getPostById } from "@/utils/post";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } = await params;
+  const post = getPostById(decodeURIComponent(id));
+
+  if (!post) {
+    return {
+      title: "Post not found",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    keywords: post.tags,
+  };
+}
 
 export default async function Page({
   params,

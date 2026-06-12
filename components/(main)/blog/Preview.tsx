@@ -15,6 +15,7 @@ interface PostPreviewProps {
   id: string;
 }
 
+
 export default function PostPreview({ id }: PostPreviewProps) {
   const post = getPostById(id);
 
@@ -27,7 +28,7 @@ export default function PostPreview({ id }: PostPreviewProps) {
     },
     {
       icon: "ri:time-line",
-      text: "5min",
+      text: `${post.readingTime} min`,
     },
     ...post.tags.map((tag) => ({
       icon: "mdi:tag",

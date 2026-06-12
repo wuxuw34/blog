@@ -44,6 +44,7 @@ export default async function PostCard({ post, type = "mini" }: PostCardProps) {
             </span>
             <div className="py-2">
               <Icon icon="mingcute:time-line" />
+              <span className="text-muted-foreground/90">{post.readingTime} min</span>
             </div>
             <ul className="flex flex-row items-center gap-1">
               {post.tags.map((tag) => (

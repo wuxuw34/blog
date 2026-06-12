@@ -6,6 +6,7 @@ interface Post {
   content: string;
   tags: string[];
   description: string;
+  readingTime: number;
   cover: {
     href: string,
     color: string
