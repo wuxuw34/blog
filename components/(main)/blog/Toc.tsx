@@ -195,7 +195,7 @@ export default function Toc({ post, headings: _headings }: TocProps) {
           <div className="max-w-sm mx-auto">
             <button
               onClick={() => setIsExpanded(true)}
-              className="relative w-full bg-card/90 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/5 overflow-hidden text-left active:scale-[0.98] transition-transform"
+              className="relative w-full bg-[#f9f7f6] backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/5 overflow-hidden text-left active:scale-[0.98] transition-transform"
             >
               <div className="relative flex items-center gap-2.5 pl-4 pr-2.5 py-2">
                 <span className="text-xs font-semibold text-primary tabular-nums shrink-0 min-w-[2.25rem] text-right">

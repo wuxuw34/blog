@@ -10,7 +10,7 @@ export default function MainHome() {
     <div className="flex flex-col items-center w-full">
       {/* 个人信息区 */}
       <Profile />
-      <div className="mx-auto w-5/6 mt-7 flex flex-col gap-7">
+      <div className="mx-auto w-5/6 max-md:w-full max-md:px-3 mt-7 flex flex-col gap-7">
         <MoreInfoCard
           title="About"
           bntText="More about me"

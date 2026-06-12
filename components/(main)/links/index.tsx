@@ -60,7 +60,7 @@ export default function Links() {
           </article>
           <Comment />
         </div>
-        <aside className="col-span-3">
+        <aside className="col-span-3 hidden md:block">
           <h2 className="text-xl font-medium">TABLE OF CONTENTS</h2>
           <Toc
             headings={[

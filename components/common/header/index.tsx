@@ -77,6 +77,7 @@ export default function Header() {
 
         {/* Mobile 按钮组 */}
         <div className="flex items-center gap-1 md:hidden">
+          {/* 
           <button
             aria-label="Search"
             className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
@@ -89,7 +90,7 @@ export default function Header() {
             className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-foreground dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+          </button> */}
           <button
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -108,7 +109,7 @@ export default function Header() {
           mobileMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-2 opacity-0",
-            scrolled ? ' rounded-xl  mt-1 bg-white' : 'bg-muted'
+          scrolled ? ' rounded-xl  mt-1 bg-white mx-1 box-border' : 'bg-[#f9f7f6]'
         ].join(" ")}
       >
         <nav className="">
