@@ -7,5 +7,5 @@ export default async function Page({
 }) {
   const { id } = await params;
 
-  return <PostPreview id={id} />;
+  return <PostPreview id={decodeURIComponent(id)} />;
 }

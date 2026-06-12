@@ -17,6 +17,7 @@ export default function getAllPosts(removeContent = false) {
       if (removeContent) {
         posts.push({
           ...md.data as Post,
+
           id: fileName
         })
       } else {
@@ -33,6 +34,7 @@ export default function getAllPosts(removeContent = false) {
 
 export function getPostById(id: string) {
   const posts = getAllPosts(false)
+  console.log(posts, id)
   return posts.find(post => post.id === id)
 }
 

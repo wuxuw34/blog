@@ -6,6 +6,9 @@ import Projects from "./Projects";
 
 
 export default function MainHome() {
+
+
+
   return (
     <div className="flex flex-col items-center w-full">
       {/* 个人信息区 */}
@@ -14,6 +17,7 @@ export default function MainHome() {
         <MoreInfoCard
           title="About"
           bntText="More about me"
+          url="/about"
           delay={0.5}
         >
           <div className="flex flex-col gap-3">
@@ -25,6 +29,7 @@ export default function MainHome() {
           title="Post"
           bntText="More posts"
           delay={1}
+          url="/blog"
         >
           <Posts />
         </MoreInfoCard>
@@ -32,6 +37,7 @@ export default function MainHome() {
           title="Projects"
           bntText="More projects"
           delay={1.5}
+          url="/projects"
         >
           <Projects />
         </MoreInfoCard>

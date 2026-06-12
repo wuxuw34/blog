@@ -1,5 +1,6 @@
 import Button from "../button/Button";
 import ArrowRight from "../svg/ArrowRight";
+import Link from 'next/link'
 
 interface MoreInfoCardProps {
   title: string;
@@ -7,6 +8,7 @@ interface MoreInfoCardProps {
   bntClick?: () => void;
   bntText?: string;
   delay?: number;
+  url?: string;
 }
 
 export default function MoreInfoCard({
@@ -14,6 +16,7 @@ export default function MoreInfoCard({
   children,
   bntClick,
   bntText,
+  url,
   delay = 0,
 }: MoreInfoCardProps) {
   return (
@@ -27,13 +30,14 @@ export default function MoreInfoCard({
       <div className="flex-1 flex-col flex gap-1">
         <div className="text-muted-foreground/80">{children}</div>
         {bntText && (
-          <Button
-            className=" self-end mt-3"
-            onClick={bntClick}
-          >
-            {bntText}
-            <ArrowRight />
-          </Button>
+          <Link href={url || ''} className=" self-end mt-3">
+            <Button
+              onClick={bntClick}
+            >
+              {bntText}
+              <ArrowRight />
+            </Button>
+          </Link>
         )}
       </div>
     </div>

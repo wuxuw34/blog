@@ -53,7 +53,7 @@ const siteConfig = {
       },
       {
         icon: "mingcute:bilibili-line",
-        name: "bilibili",
+        name: "Bilibili",
         href: "https://space.bilibili.com/35105554",
       },
       {
@@ -63,8 +63,8 @@ const siteConfig = {
       },
       {
         icon: "mdi:github",
-        name: "github",
-        href: "",
+        name: "Github",
+        href: "https://github.com/wuxuw34",
       },
     ],
     /**

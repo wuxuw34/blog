@@ -9,23 +9,23 @@ import siteConfig from "@/config/site-config";
 export default function Projects() {
   return (
     <div>
-      <Link
+      {/* <Link
         href="/blog"
         className="col-span-12 "
       >
         <Button>
           <Icon icon="mdi:arrow-left" /> Back
         </Button>
-      </Link>
+      </Link> */}
       <h1 className="my-6 text-3xl font-medium animate">Projects</h1>
-      <div className="grid grid-cols-12 mt-6 gap-x-6">
+      <div className="md:grid grid-cols-12 mt-6 gap-x-6">
         <article className="col-span-9">
           <markdownComponents.h1>Github</markdownComponents.h1>
           <div>
             <GithubCard />
           </div>
           <markdownComponents.h1>Projects</markdownComponents.h1>
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2 ">
             {siteConfig.projects.map((project) => (
               <div
                 key={project.name}
@@ -59,7 +59,7 @@ export default function Projects() {
             className="invisible"
           ></h1>
         </article>
-        <div className="col-span-3">
+        <div className="col-span-3 hidden md:block">
           <aside className=" animate sticky top-24">
             <h2 className="text-xl font-medium">TABLE OF CONTENTS</h2>
             <Toc

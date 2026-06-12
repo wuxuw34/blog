@@ -109,7 +109,7 @@ export default function Header() {
           mobileMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-2 opacity-0",
-          scrolled ? ' rounded-xl  mt-1 bg-white mx-1 box-border' : 'bg-[#f9f7f6]'
+          scrolled ? ' rounded-xl  mt-1 bg-white box-border' : 'bg-[#f9f7f6]'
         ].join(" ")}
       >
         <nav className="">

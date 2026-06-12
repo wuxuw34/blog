@@ -14,14 +14,14 @@ import Comment from "@/components/common/comment";
 export default function About() {
   return (
     <div>
-      <Link
+      {/* <Link
         href="/blog"
         className="col-span-12 "
       >
         <Button>
           <Icon icon="mdi:arrow-left" /> Back
         </Button>
-      </Link>
+      </Link> */}
       <h1 className="my-6 text-3xl font-medium animate">About</h1>
       <div className="md:grid grid-cols-12 mt-6 gap-x-6">
         <article className="col-span-9 ">
