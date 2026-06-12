@@ -4,7 +4,7 @@ import { getPostById } from "@/utils/post";
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const post = getPostById(decodeURIComponent(id));
