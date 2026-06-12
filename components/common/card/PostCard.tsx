@@ -3,6 +3,7 @@ import moment from "moment";
 import Image from "next/image";
 import ArrowRight from "../svg/ArrowRight";
 import Link from "next/link";
+import siteConfig from "@/config/site-config";
 
 interface PostCardProps {
   post: Post;
@@ -31,7 +32,7 @@ export default async function PostCard({ post, type = "mini" }: PostCardProps) {
           />
           <div className="relative w-full flex flex-col justify-between gap-1">
             <span className="text-muted-foreground/80 text-sm">
-              {moment(post.createAt).format("MMM yy, YYYY")}
+              {moment(post.createAt).format(siteConfig.settings.timeFormat)}
             </span>
             <div className="flex flex-row items-center justify-between ">
               <span className="text-lg group-hover:text-(--color)">
@@ -68,7 +69,7 @@ export default async function PostCard({ post, type = "mini" }: PostCardProps) {
     >
       <div className="flex flex-row items-center">
         <div className="min-w-26">
-          {moment(post.createAt).format("MMM yy, YYYY")}
+          {moment(post.createAt).format(siteConfig.settings.timeFormat)}
         </div>
         <span className="text-muted-foreground/70 font-bold group-hover:text-primary/90">
           {post.title}
