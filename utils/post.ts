@@ -33,9 +33,22 @@ export default function getAllPosts(removeContent = false) {
   return posts
 }
 
+export function getAllPostPaths() {
+  if (!fs.existsSync(POSTS_DIR)) {
+    fs.mkdirSync(POSTS_DIR)
+  }
+  const paths: string[] = []
+  fs.readdirSync(POSTS_DIR).forEach(fileName => {
+    const filePath = path.join(POSTS_DIR, fileName)
+    if (fs.existsSync(filePath)) {
+      paths.push(fileName)
+    }
+  })
+  return paths
+}
+
 export function getPostById(id: string) {
   const posts = getAllPosts(false)
-  console.log(posts, id)
   return posts.find(post => post.id === id)
 }
 

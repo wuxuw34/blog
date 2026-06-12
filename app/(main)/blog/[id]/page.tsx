@@ -1,5 +1,15 @@
 import PostPreview from "@/components/(main)/blog/Preview";
-import { getPostById } from "@/utils/post";
+import { getAllPostPaths, getPostById } from "@/utils/post";
+
+export async function generateStaticParams() {
+  const paths = getAllPostPaths();
+
+  return paths.map((path) => {
+    return {
+      id: path,
+    };
+  });
+}
 
 export async function generateMetadata({
   params,
